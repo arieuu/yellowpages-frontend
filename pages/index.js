@@ -2,6 +2,7 @@ import NavBar from '../components/Navbar'
 import Drawer from '../components/Drawer'
 import { useState } from 'react'
 import SearchPage from './SearchPage';
+import Footer from '../components/Footer';
 import BizDetails from './BizDetails';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <NavBar toggle={toggle}/>
       <Drawer isOpen={isOpen} toggle={toggle}/>
       <BizDetails />
+      <Footer />
     </>
     
   )
