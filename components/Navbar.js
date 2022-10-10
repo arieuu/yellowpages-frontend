@@ -5,7 +5,7 @@ export default function NavBar({ toggle }){
     const logo = '/logo-pa.png';
 
     return (
-        <nav className="flex justify-between items-center h-16 bg-yellow-300 text-gray-800 relative shadow-sm font-sans">
+        <nav className="flex justify-between items-center h-16 bg-[#FBED04] text-gray-800 relative shadow-sm font-sans">
             <div className="pl-16">
                 {/*<strong className="pr-4 border-r-2 border-black">Yellow Pages</strong>
                 <a href="#" className="pl-4"><span>Categorias</span></a>*/}

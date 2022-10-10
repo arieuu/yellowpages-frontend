@@ -12,7 +12,7 @@ export default function CardBusiness() {
                 <strong>CV Móvel</strong>
                 <span className='text-xs'>Telecomunicações</span>
                 <div className='flex flex-row mt-2'>
-                    <button className='bg-[#fef000] py-0.5 px-2 rounded text-sm mr-3'>Chamar</button>
+                    <button className='bg-[#FBED04] py-0.5 px-2 rounded text-sm mr-3'>Chamar</button>
                     <button className='border py-0.5 px-2 text-sm rounded mr-3'>Direções</button>
                     <button className='border py-0.5 px-2 text-sm rounded mr-3'>Sociais</button>
                 </div>

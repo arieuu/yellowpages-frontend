@@ -1,7 +1,7 @@
 
 export default function Footer() {
     return (
-        <div className="bg-[#3d3d3d] px-16 pt-16">
+        <div className="bg-[#0e1217] px-16 pt-16">
             <div className="grid grid-cols-3 justify-items-center">
                 <div className="flex flex-col mr-[-400px] text-white">
                     <h3 className="text-3xl mb-3">Quick Links</h3>

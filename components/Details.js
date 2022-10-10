@@ -1,4 +1,11 @@
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 
 export default function Details() {
@@ -21,7 +28,7 @@ export default function Details() {
                     It is the fourth largest banking institution in Brazil, as well as the fourth largest in Latin America, and the eighty-third largest bank in the world.
                 </p>
                 <div className='flex flex-row justify-end'>
-                    <button className='bg-[#fef000] py-0.5 px-2 rounded text-sm mr-3'>Chamar</button>
+                    <button className='bg-[#FBED04] py-0.5 px-2 rounded text-sm mr-3'>Chamar</button>
                     <button className='border py-0.5 px-2 text-sm rounded mr-3'>Direções</button>
                     <button className='border py-0.5 px-2 text-sm rounded mr-3'>Sociais</button>
                 </div>
@@ -51,6 +58,37 @@ export default function Details() {
             <div className='border p-4 mt-8'>
                 <strong>Horário de funcionamento</strong>
                 <p className='w-[30rem]'>Monday - Friday 8am to 5pm</p>
+            </div>
+
+            <div className='mx-auto mt-16'>
+                <h3 className='font-bold text-2xl text-center'>Galeria <span className='text-gray-500'>de fotos</span></h3>
+                <Swiper
+                    cssMode={true}
+                    slidesPerView={3}
+                    spaceBetween={30}
+                    pagination={true}
+                    navigation={true}
+                    mousewheel={true}
+                    keyboard={true}
+                    modules={[Pagination, Navigation, Mousewheel, Keyboard]}
+                    className="swiper"
+                >
+                    <SwiperSlide>
+                        <Image src={'/slide1.png'} width={320} height={187}/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src={'/slide2.png'} width={320} height={187}/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src={'/slide3.png'} width={320} height={187}/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src={'/slide1.png'} width={320} height={187}/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image src={'/slide2.png'} width={320} height={187}/>
+                    </SwiperSlide>
+                </Swiper>
             </div>
 
             <div className='p-4 mt-8'>
