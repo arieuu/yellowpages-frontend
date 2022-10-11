@@ -7,7 +7,6 @@ import 'swiper/css/pagination';
 
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-
 export default function Details() {
 
     const bizImage = '/logo-pa.png';
@@ -33,26 +32,48 @@ export default function Details() {
                     <button className='border py-0.5 px-2 text-sm rounded mr-3'>Sociais</button>
                 </div>
             </div>
-            <div className='grid grid-cols-2 gap-4 mt-8'>
+            <div className='grid grid-cols-3 gap-x-4 mt-4'>
                 <div>
-                    <strong>Endereço</strong>
-                    <p className='block'>Sanlam Tower, 18th Foor, Waiyaki Way,
+                    <div className='flex items-center gap-3'>
+                        <strong>Endereço</strong>
+                        <Image src={'/enderesso.png'} width={16} height={16}/>
+                    </div>
+                    <p className='block text-sm'>Sanlam Tower, 18th Foor, Waiyaki Way,
                         Westlands, Nairobi P.O.Box: 14531 - 00800
                         Nairobi.
                     </p>
                 </div>
                 <div>
-                    <strong>Serviços</strong>
-                    <p>Banking</p>
+                    <div className='flex items-center gap-3'>
+                        <strong>Serviços</strong>
+                        <Image src={'/servico-reparacao.png'} width={17} height={17}/>
+                    </div>
+                    <p className='text-sm'>Banking</p>
                 </div>
                 <div>
-                    <strong>Atividade</strong>
-                    <p>Banking</p>
+                    <div className='flex items-center gap-x-3'>
+                        <strong>Info</strong>
+                        <Image src={'/info.png'} width={16} height={16}/>
+                    </div>
+                    <p className='block text-sm'>Caixa Econômica Federal, also referred to as Caixa, 
+                        is a state-owned Brazilian financial services company 
+                        headquartered in Brasília, Brazil. It is the fourth largest.</p>
+                </div>
+                <div> 
+                    <div className='flex items-center gap-3'>
+                        <strong>Atividade</strong>
+                        <Image src={'/bold-activity.png'} width={16} height={16}/>
+                    </div>
+                    <p className='text-sm'>Banking</p>
                 </div>
                 <div>
-                    <strong>Métodos de pagamento</strong>
-                    <p>Vint4, Visa, Mastercard</p>
+                    <div className='flex items-center gap-3'>
+                        <strong>Métodos de pagamento</strong>
+                        <Image src={'/cartao.png'} width={16} height={16}/>
+                    </div>
+                    <p className='text-sm'>Vint4, Visa, Mastercard</p>
                 </div>
+                
             </div>
 
             <div className='border p-4 mt-8'>
@@ -91,9 +112,9 @@ export default function Details() {
                 </Swiper>
             </div>
 
-            <div className='p-4 mt-8'>
-                <strong>Partilhar informações</strong>
-                <div className='mt-4 text-center'>
+            <div className='p-4 mt-8 text-center'>
+                <h3 className='text-xl font-bold'>Partilhar informações</h3>
+                <div className='mt-8 mb-6'>
                     <button className='bg-gray-900 py-0.5 px-2 rounded text-sm mr-3 text-white'>Email</button>
                     <button className='bg-gray-900 border py-0.5 px-2 text-sm rounded mr-3 text-white'>Facebook</button>
                     <button className='bg-gray-900 border py-0.5 px-2 text-sm rounded mr-3 text-white'>Instagram</button>
