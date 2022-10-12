@@ -5,6 +5,9 @@ import Hero from '../components/Hero';
 import SearchPage from './SearchPage';
 import Footer from '../components/Footer';
 import BizDetails from './BizDetails';
+import GrowWithUs from '../components/GrowWithUs';
+import YpMedia from '../components/YpMedia';
+import PopularService from '../components/PopularService';
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +20,10 @@ export default function Home() {
     <>
       <NavBar toggle={toggle}/>
       <Drawer isOpen={isOpen} toggle={toggle}/>
-      <BizDetails />
+      <Hero />
+      <GrowWithUs />
+      <YpMedia />
+      <PopularService />
       <Footer />
     </>
     

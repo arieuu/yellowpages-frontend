@@ -4,10 +4,12 @@ import Scroll from "./Scroll";
 
 export default function Hero(){
     return (
-        <div className="bg-white h-screen flex flex-col pt-[9rem] items-center">
-            <Description />
-            <SearchInput />
-            <Scroll />
+        <div className="min-h-screen flex flex-col py-56 items-center">
+            <div>
+                <Description />
+                <SearchInput />
+            </div>
+            <Scroll/>
         </div>
     );
 }
