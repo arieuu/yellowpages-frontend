@@ -8,6 +8,7 @@ import BizDetails from './BizDetails';
 import GrowWithUs from '../components/GrowWithUs';
 import YpMedia from '../components/YpMedia';
 import PopularService from '../components/PopularService';
+import TopSearch from '../components/TopSearch';
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,7 @@ export default function Home() {
       <GrowWithUs />
       <YpMedia />
       <PopularService />
+      <TopSearch />
       <Footer />
     </>
     

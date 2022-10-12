@@ -3,12 +3,12 @@ import Image from "next/image";
 export default function GrowWithUs() {
   return(
     <div className="bg-gray-100">
-      <div className="md:max-w-6xl p-8 mr-[7rem] mx-auto flex md:flex-row flex-col-reverse mb-8">
-          <div className="md:w-1/2 w-full max-w-sm flex flex-col">
-            <h2 className="text-2xl md:text-left text-center font-bold text-gray-500">Grow with us</h2>
+      <div className="md:max-w-6xl p-8 mr-[7rem] mx-auto flex md:flex-row flex-col-reverse justify-center mb-8">
+          <div className="md:w-1/2 w-full max-w-sm pr-6 flex flex-col">
+            <h2 className="text-3xl md:text-left text-center font-bold text-gray-500">Grow with us</h2>
             <div className="pt-8">
               <div className="flex gap-3 items-center pb-3">
-                <h3 className="font-semibold text-center text-xl">Get noticed</h3>
+                <h3 className="font-bold text-center text-xl">Get noticed</h3>
                 <Image src={'/megaphone.svg'} width={24} height={24}/>
               </div>
               <p className="leading-relaxed">Improve your company's visibility, 
@@ -17,7 +17,7 @@ export default function GrowWithUs() {
             </div>
             <div className="pt-4">
               <div className="flex gap-3 items-center pb-3">
-                <h3 className="font-semibold text-xl">Get customers</h3>
+                <h3 className="font-bold text-xl">Get customers</h3>
                 <Image src={'/more-people.svg'} width={24} height={24} />
               </div>
               <p className="leading-relaxed">Clients trust those who have been trusted by others. 
@@ -26,15 +26,15 @@ export default function GrowWithUs() {
             </div>
             <div className="pt-4">
               <div className="flex gap-3 items-center pb-3">
-                <h3 className="font-semibold text-xl">Get results</h3>
+                <h3 className="font-bold text-xl">Get results</h3>
                 <Image src={'/check.svg'} width={20} height={20} />
               </div>
               <p className="leading-relaxed">We deliver tangible, measurable results that guide your growth path.</p>
             </div>
             <button className="px-9 py-3 bg-[#FBED04] max-w-fit rounded-md mt-8">Learn how</button>
           </div>
-          <div className="w-1/2 mx-auto pl-20 flex justify-center">
-            <Image src={'/grow.png'} width={980} height={730}/>
+          <div className="w-1/2 mx-auto flex justify-center">
+            <Image src={'/grow.png'} width={1200} height={1200}/>
           </div>
       </div>
       </div>
