@@ -3,9 +3,11 @@ import Image from "next/image";
 export default function GrowWithUs() {
   return(
     <div className="bg-gray-100">
-      <div className="md:max-w-6xl p-8 mr-[7rem] mx-auto flex md:flex-row flex-col-reverse justify-center mb-8">
+      <h2 className="text-3xl text-center font-bold text-gray-500 pt-8 font-muliBlack">Grow with us</h2>
+      <div className="relative md:max-w-6xl gap-[10rem] px-8 py-6 mx-auto flex md:flex-row flex-col-reverse justify-center mb-32">
+      
           <div className="md:w-1/2 w-full max-w-sm pr-6 flex flex-col">
-            <h2 className="text-3xl md:text-left text-center font-bold text-gray-500">Grow with us</h2>
+            
             <div className="pt-8">
               <div className="flex gap-3 items-center pb-3">
                 <h3 className="font-bold text-center text-xl">Get noticed</h3>
@@ -33,10 +35,11 @@ export default function GrowWithUs() {
             </div>
             <button className="px-9 py-3 bg-[#FBED04] max-w-fit rounded-md mt-8">Learn how</button>
           </div>
-          <div className="w-1/2 mx-auto flex justify-center">
-            <Image src={'/grow.png'} width={1200} height={1200}/>
-          </div>
+  
+          <Image src={'/grow.png'} width={768} height={786} className="abosulte mr-16 object-contain top-0 right-0"/>
       </div>
+     
+     
       </div>
   );
 }

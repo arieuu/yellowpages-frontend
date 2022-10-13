@@ -6,6 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nunito: ['Nunito-sans'],
+        sans: ['Nunito-sans', 'sans-serif'],
+        muliBlack: ['Muli-black']
+      },
       animation: {
         'bounce-fs': 'bounce 0.6s infinite'
       },
@@ -15,4 +20,7 @@ module.exports = {
     },
   },
   plugins: [],
+  corePlugins: {
+    fontFamily: true,
+  }
 }

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PopularService() {
   return(
-      <div className="max-w-6xl mx-auto my-16">
+      <div className="max-w-6xl mx-auto my-36">
         <div className="flex flex-col items-center mb-16">
           <h3 className='font-bold text-2xl'>
             Popular Services <span className='text-gray-500'>near you</span>
