@@ -5,7 +5,7 @@ export default function Scroll() {
     const arrow = '/seta.png';
 
     return(
-        <div className="flex flex-col mt-[10rem] items-center">
+        <div className="flex flex-col mt-[14rem] items-center">
             <p className="mb-2">Role para baixo para explorar</p>
             {/*<Image src={arrow} width={20} height={20} className='animate-bounce' />*/}
             {/*<svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>*/}

@@ -5,7 +5,7 @@ export default function Footer() {
             <div className="grid grid-cols-3 justify-items-center">
                 <div className="flex flex-col mr-[-400px] text-white">
                     <h3 className="text-3xl mb-3">Quick Links</h3>
-                    <ul className="text-sm text-gray-300">
+                    <ul className="text-sm text-gray-300 space-y-1">
                         <li>World directories</li>
                         <li>State house</li>
                         <li>Ministries</li>
@@ -15,7 +15,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col text-white">
                     <h3 className="text-3xl mb-3">Our sites</h3>
-                    <ul className="text-sm text-gray-300">
+                    <ul className="text-sm text-gray-300 space-y-1">
                         <li>World directories</li>
                         <li>State house</li>
                         <li>Ministries</li>
@@ -24,7 +24,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className="flex flex-col ml-[-350px]">
-                    <h3 className="text-3xl mb-3 text-white">Reach us anytime</h3>
+                    <h3 className="text-3xl space-y-2 text-white">Reach us anytime</h3>
                     <span className="text-sm text-gray-300">Tel: +254 020 7800 701</span>
                     <div className="flex flex-row text-gray-300">
                         <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 64 64"><path d="M 31.820312 12 C 13.438312 12 12 13.439312 12 31.820312 L 12 32.179688 C 12 50.560688 13.438313 52 31.820312 52 L 32.179688 52 C 50.561688 52 52 50.560688 52 32.179688 L 52 32 C 52 13.452 50.548 12 32 12 L 31.820312 12 z M 43.994141 18 C 45.099141 17.997 45.997 18.889141 46 19.994141 C 46.003 21.099141 45.110859 21.997 44.005859 22 C 42.900859 22.003 42.003 21.110859 42 20.005859 C 41.997 18.900859 42.889141 18.003 43.994141 18 z M 31.976562 22 C 37.498562 21.987 41.987 26.454563 42 31.976562 C 42.013 37.498562 37.545437 41.987 32.023438 42 C 26.501437 42.013 22.013 37.545437 22 32.023438 C 21.987 26.501437 26.454563 22.013 31.976562 22 z M 31.986328 26 C 28.672328 26.008 25.992 28.701625 26 32.015625 C 26.008 35.328625 28.700672 38.008 32.013672 38 C 35.327672 37.992 38.008 35.299328 38 31.986328 C 37.992 28.672328 35.299328 25.992 31.986328 26 z"/></svg>

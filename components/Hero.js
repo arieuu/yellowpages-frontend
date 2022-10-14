@@ -5,7 +5,7 @@ import Scroll from "./Scroll";
 export default function Hero(){
     return (
         <div className="">
-            <div className="h-screen flex flex-col py-56 items-center">
+            <div className="h-screen flex flex-col py-40 items-center">
                 <Description />
                 <SearchInput />
                 <Scroll/>

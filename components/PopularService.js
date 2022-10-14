@@ -4,8 +4,8 @@ export default function PopularService() {
   return(
       <div className="max-w-6xl mx-auto my-36">
         <div className="flex flex-col items-center mb-16">
-          <h3 className='font-bold text-2xl'>
-            Popular Services <span className='text-gray-500'>near you</span>
+          <h3 className='font-bold pb-8 text-4xl font-mulish'>
+            Popular Services <span className='text-[#7D7D7D] text-3xl'>near you</span>
           </h3>
           <p>This is a list with all the most popular services for your area. 
             They have been searched the most.</p>
@@ -35,7 +35,7 @@ export default function PopularService() {
           </div>
         </div>
         <div className="flex justify-center">
-          <button className="px-9 py-3 bg-[#FBED04] max-w-fit rounded-md mt-8">Serviços</button>
+        <button className="px-9 py-3 bg-[#FBED04] max-w-fit rounded-md mt-8 hover:bg-[#1d1d1a] hover:text-white hover:shadow-lg transition duration-300 ease-in-out">Serviços</button>
         </div>
       </div>
   );

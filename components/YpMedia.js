@@ -8,12 +8,12 @@ export default function YpMedia() {
           </div>
 
           <div className="md:w-1/2 w-full max-w-md justify-center flex flex-col">
-            <h2 className="text-2xl md:text-left text-center font-bold">YP Media</h2>
+            <h2 className="text-3xl md:text-left text-center font-bold font-mulish">YP Media</h2>
             <div className="pt-8">
               <p className="leading-relaxed">YP media is a full-service digital agency providing SEO, 
                 Websites, Email marketing, Social Media Management and Yellow Spot.</p>
             </div>
-            <button className="px-9 py-3 bg-[#FBED04] max-w-fit rounded-md mt-8">Learn how</button>
+            <button className="px-9 py-3 bg-[#FBED04] max-w-fit rounded-md mt-8 hover:bg-[#1d1d1a] hover:text-white hover:shadow-lg transition duration-300 ease-in-out">Learn more</button>
           </div>
       </div>
   );

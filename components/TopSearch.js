@@ -9,7 +9,7 @@ export default function TopSearch() {
           </div>
 
           <div className="md:w-1/2 w-full max-w-md justify-center flex flex-col">
-            <h2 className="text-2xl md:text-left text-center font-bold">Top searches</h2>
+            <h2 className="text-4xl md:text-left text-center font-bold font-mulish">Top searches</h2>
             <p className="leading-relaxed">See what’s being searched right now</p>
             <div className="mt-8 flex flex-col border border-gray-300 shadow-md px-3 pb-3 border-t-0 w-3/4">
               <p className="leading-relaxed p-2 bg-[#a7eaa1] rounded-sm mt-2">Car rental</p>

@@ -2,78 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Nunito-sans';
-  font-style: black;
-  font-weight: 700;
-  src: local(''), url('/fonts/NunitoSans-Black') format('ttf');
-}
-
-@font-face {
-  font-family: 'Nunito-sans';
-  font-style: regular;
-  font-weight: 400;
-  src: local(''), url('/fonts/NunitoSans-Regular') format('ttf');
-}
-
-@font-face {
-  font-family: 'Muli-black';
-  font-style: italic;
-  font-weight: 700;
-  src: local(''), url('/fonts/Muli Black Italic') format('ttf');
-}
-
-
 .swiper {
-    width: 600px;
-    height: 300px;
+  width: 600px;
+  height: 300px;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
-  
+
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .swiper-button-prev {
-    background-image: url('../public/arrow-left.png') !important;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-  }
+  background-image: url("../public/arrow-left.png") !important;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
 
 .swiper-button-prev::after {
-    display: none;
+  display: none;
 }
-  
-  .swiper-button-next {
-    background-image: url("../public/arrow-right.png") !important;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-  }
 
-  .swiper-button-next::after {
-    display: none;
+.swiper-button-next {
+  background-image: url("../public/arrow-right.png") !important;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-next::after {
+  display: none;
 }
