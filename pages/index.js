@@ -2,7 +2,6 @@ import NavBar from '../components/Navbar'
 import Drawer from '../components/Drawer'
 import { useState } from 'react'
 import Hero from '../components/Hero';
-import SearchPage from './SearchPage';
 import Footer from '../components/Footer';
 import BizDetails from './BizDetails';
 import GrowWithUs from '../components/GrowWithUs';

@@ -1,14 +1,16 @@
 import { parse } from "postcss";
 import { useEffect, useState } from "react";
-import { resolve } from "styled-jsx/css";
-import Scroll from "./Scroll";
 import axios from "axios";
+import Link from "next/link";
 
+
+
+let inputValueGlobal;
 
 const getServices = async (str) => {
     try {
         let searchableCountry = str.replace(/,/g,"");
-        let url = "https://a67a-197-255-136-79.eu.ngrok.io/suggest?query=" + searchableCountry;
+        let url = "https://dfea-197-255-136-79.eu.ngrok.io/api/v1/suggest?query=" + searchableCountry;
 
         let { data } = await axios.get(url);
         return data;
@@ -28,7 +30,12 @@ export default function SearchInput() {
             return;
         }
         
-        let data = await getServices(e.target.value);
+        let inputValue = e.target.value;
+        let valueArray = inputValue.split(" ");
+        let newValue = valueArray[(valueArray.length)-1];
+
+        inputValueGlobal = inputValue;
+        let data = await getServices(newValue);
         setOptions(data);
         //console.log(data);
         
@@ -85,10 +92,11 @@ export default function SearchInput() {
                 >
                     {
                         options.map((item, index) => (
-                            <li 
-                                key={index}
-                                className="min-h-10 w-[350px] border-b-[1px] border-solid border-l-gray-300 py-2"
-                            >{item}</li>
+                            <li key={index} 
+                                className="min-h-10 w-[350px] border-b-[1px] border-solid border-l-gray-300 py-2">
+                            <Link href={`/search/${encodeURIComponent(inputValueGlobal)}`}><a>
+                                {item}</a></Link>
+                            </li>
                         ))
                     }
                 </ul>
