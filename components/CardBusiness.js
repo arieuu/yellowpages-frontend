@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const getBuziness = async (id) => {
-    let url = "https://dfea-197-255-136-79.eu.ngrok.io/api/v1/business/" + id
+    const url = "https://dc5c-197-255-136-79.eu.ngrok.io/api/v1/business/" + id
 
     let { data } = await axios.get(url);
     //console.log(data);
@@ -18,9 +18,13 @@ export default function CardBusiness(props) {
 
     useEffect(() => {
         async function fetchData() {
-            let data = await getBuziness(bizId);
-            //console.log(data.name);
-            setBiz(data);
+            try {
+                let data = await getBuziness(bizId);
+                setBiz(data);
+                //console.log(data.name);
+            } catch(e) {
+                console.error(e);
+            }
         }
         fetchData();
     }, []);
@@ -31,8 +35,8 @@ export default function CardBusiness(props) {
         <div className="flex flex-row w-[30rem] m-8 shadow-md border rounded-md p-3 border-gray-400">
             <Image src={bizImage} width={100} height={100} objectFit="contain"/>
             <div className='flex flex-col pl-4 pt-3'>
-                <p className='font-bold'>{biz.name}</p>
-                <span className='text-xs'>{biz.category}</span>
+                <p className='font-bold'>{biz?.name}</p>
+                <span className='text-xs'>{biz?.category}</span>
                 <div className='flex flex-row mt-2'>
                     <button className='bg-[#FBED04] py-0.5 px-2 rounded text-sm mr-3'>Chamar</button>
                     <button className='border py-0.5 px-2 text-sm rounded mr-3'>Direções</button>

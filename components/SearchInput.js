@@ -1,5 +1,6 @@
 import { parse } from "postcss";
 import { useEffect, useState } from "react";
+import {useRouter} from 'next/router'
 import axios from "axios";
 import Link from "next/link";
 
@@ -10,9 +11,9 @@ let inputValueGlobal;
 const getServices = async (str) => {
     try {
         let searchableCountry = str.replace(/,/g,"");
-        let url = "https://dfea-197-255-136-79.eu.ngrok.io/api/v1/suggest?query=" + searchableCountry;
+        const url = "https://dc5c-197-255-136-79.eu.ngrok.io/api/v1/suggest?query=" + searchableCountry;
 
-        let { data } = await axios.get(url);
+        const { data } = await axios.get(url);
         return data;
     } catch (e) {
         console.error(e);
@@ -21,11 +22,12 @@ const getServices = async (str) => {
 
 export default function SearchInput() {
 
+    const router = useRouter()
+
     const [options, setOptions] = useState([]);
 
     const onChangeData = async (e) => {
-
-        //console.log(e.target.value.length);
+        e.preventDefault();
         if (e.target.value.length === 0) {
             return;
         }
@@ -34,33 +36,45 @@ export default function SearchInput() {
         let valueArray = inputValue.split(" ");
         let newValue = valueArray[(valueArray.length)-1];
 
-        inputValueGlobal = inputValue;
         let data = await getServices(newValue);
         setOptions(data);
-        //console.log(data);
         
+    };
+
+    const handleSubmit = async (e) => {
+       e.preventDefault();
+
+       console.log(e.target.search.value);
+
+       if (e.target.search.value.length === 0) {
+           return;
+       }
+    
+       let data = await getServices(e.target.search.value);
+
+       setOptions(data);
+
+       router.push("search/" + e.target.search.value);
     };
 
     return (
         <div className="max-w-md">
-        <form action="" >
-            <div className="flex items-center text-gray-400 focus-within:text-gray-600">
-                <svg className="w-6 h-6 absolute ml-[25rem] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <input type="text" 
-                       name="search"
-                       className="border border-gray-800 placeholder-gray-500 text-center focus:outline-none rounded-[0.5rem] shadow-sr w-[30rem] pr-16 pl-4 h-12"
-                       placeholder="Pesquise por milhões de empresas"
-                       aria-label="search"
-                       autoComplete="on"
-                       onChange={(e) => onChangeData(e)}/>
-                {/*<button type="submit" className="px-6 py-3 bg-slate-900 text-white rounded-sm">SEARCH</button>*/}
-                
-            </div>
-            
-    </form>
-    
+            <form onSubmit={handleSubmit}>
+                <div className="flex items-center text-gray-400 focus-within:text-gray-600">
+                    <svg className="w-6 h-6 absolute ml-[25rem] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input type="text" 
+                        name="search"
+                        id="name"
+                        className="border border-gray-800 placeholder-gray-500 text-center focus:outline-none rounded-[0.5rem] shadow-sr w-[30rem] pr-16 pl-4 h-12"
+                        placeholder="Pesquise por milhões de empresas"
+                        aria-label="search"
+                        autoComplete="on"
+                        onChange={(e) => onChangeData(e)}/>
+                    {/*<button type="submit" className="px-6 py-3 bg-slate-900 text-white rounded-sm">SEARCH</button>*/}
+                </div>
+            </form>
         {/*<form class="flex items-center justify-center md:max-w-lg">   
             <label for="voice-search" class="sr-only">Search</label>
             <div class="relative w-96">
@@ -81,30 +95,25 @@ export default function SearchInput() {
             <button type="submit" class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-slate-900 rounded-sm border border-slate-700 hover:bg-slate-900 focus:ring-4 focus:outline-none dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">
                 <svg aria-hidden="true" class="mr-2 -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>Search
             </button>
-
-
-</form>*/}
-        {
-            options?.length > 0 && (
-                <ul 
-                id="options_list"
-                className="bg-white border-[1px] rounded-b-md shadow-lg p-4 absolute max-h-[200px] overflow-y-auto"
-                >
-                    {
-                        options.map((item, index) => (
-                            <li key={index} 
-                                className="min-h-10 w-[350px] border-b-[1px] border-solid border-l-gray-300 py-2">
-                            <Link href={`/search/${encodeURIComponent(inputValueGlobal)}`}><a>
-                                {item}</a></Link>
-                            </li>
-                        ))
-                    }
-                </ul>
-            )
-                /*console.log(options)*/
+            </form>*/}
+            {
+                options?.length > 0 && (
+                    <ul 
+                        id="options_list"
+                        className="bg-white border-[1px] rounded-b-md shadow-lg p-4 absolute max-h-[200px] overflow-y-auto">
+                        {
+                            options.map((item, index) => (
+                                <li key={index} 
+                                    className="min-h-10 w-[350px] border-b-[1px] border-solid border-l-gray-300 py-2">
+                                    <Link href={`search/${encodeURIComponent(item)}`}><a>
+                                    {item}</a></Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                )
             }
         
-            
         </div>
     );
 }
