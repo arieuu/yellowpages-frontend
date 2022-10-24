@@ -5,10 +5,14 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { GetServerSideProps } from "next";
+import Footer from "../../components/Footer";
+import NavBar from "../../components/Navbar";
+import Drawer from "../../components/Drawer";
+
 
 
 const getBuziness = async (str) => {
-    const url = "https://dc5c-197-255-136-79.eu.ngrok.io/api/v1/search?query=" + str;
+    const url = "https://1c0d-197-255-136-79.eu.ngrok.io/api/v1/search?query=" + str;
 
     let { data } = await axios.get(url);
     //console.log(data);
@@ -17,7 +21,12 @@ const getBuziness = async (str) => {
 
 export default function Seacrh({data}) {
     const router = useRouter();
+    const [isOpen, setIsOpen] = useState(false);
     const [biz, setBiz] =  useState([]);
+
+    const toggle = () => {
+        setIsOpen(isOpen => !isOpen);
+      };
 
     useEffect(() => {
 
@@ -30,9 +39,14 @@ export default function Seacrh({data}) {
     }, []);
 
     return (
-        <div className="flex flex-col items-center mt-28">
-            <SearchInput></SearchInput>
-            <CardList business={biz}/>
+        <div>
+            <NavBar toggle={toggle}/>
+            <Drawer isOpen={isOpen} toggle={toggle}/>
+            <div className="flex flex-col min-h-screen items-center mt-28">
+                <SearchInput></SearchInput>
+                <CardList business={biz}/>
+            </div>
+            <Footer />
         </div>
     );
 }

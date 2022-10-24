@@ -11,7 +11,7 @@ let inputValueGlobal;
 const getServices = async (str) => {
     try {
         let searchableCountry = str.replace(/,/g,"");
-        const url = "https://dc5c-197-255-136-79.eu.ngrok.io/api/v1/suggest?query=" + searchableCountry;
+        const url = "https://1c0d-197-255-136-79.eu.ngrok.io/api/v1/suggest?query=" + searchableCountry;
 
         const { data } = await axios.get(url);
         return data;
@@ -51,7 +51,6 @@ export default function SearchInput() {
        }
     
        let data = await getServices(e.target.search.value);
-
        setOptions(data);
 
        router.push("search/" + e.target.search.value);
