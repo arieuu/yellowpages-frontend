@@ -11,7 +11,7 @@ let inputValueGlobal;
 const getServices = async (str) => {
     try {
         let searchableCountry = str.replace(/,/g,"");
-        const url = "https://1c0d-197-255-136-79.eu.ngrok.io/api/v1/suggest?query=" + searchableCountry;
+        const url = "https://ef5f-197-255-136-79.eu.ngrok.io/api/v1/suggest?query=" + searchableCountry;
 
         const { data } = await axios.get(url);
         return data;

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const getBuziness = async (id) => {
-    const url = "https://1c0d-197-255-136-79.eu.ngrok.io/api/v1/business/" + id
+    const url = "https://ef5f-197-255-136-79.eu.ngrok.io/api/v1/business/" + id
 
     let { data } = await axios.get(url);
     //console.log(data);
@@ -14,12 +14,21 @@ const getBuziness = async (id) => {
 export default function CardBusiness(props) {
 
     let bizId = props.businessItem;
-    const [biz, setBiz] =  useState([]);
-    const [bizInfo, setBizInfo] = useState("");
+    //let bizIndex = props.businessIndex;
+
+    const [biz, setBiz] =  useState({});
+    const [bizInfo, setBizInfo] = useState({});
+    //const [bizIndexInfo, setBizIndexInfo] = useState([]);
 
     function handleBusiness(e) {
         e.preventDefault();
-        setBizInfo(biz.name);
+
+        if (biz.id === e.target.id) {
+            setBizInfo(biz);
+        } else {
+            setBizInfo("");
+        }
+        
     }
 
 
@@ -40,7 +49,7 @@ export default function CardBusiness(props) {
 
     return(
             <div className='flex'>
-                <div className="flex flex-row w-[30rem] m-8 shadow-md border rounded-md p-3 border-gray-400" onMouseEnter={handleBusiness}>
+                <div className="flex flex-row w-[30rem] m-8 shadow-md border rounded-md p-3 border-gray-400" onMouseEnter={handleBusiness} id={biz?.id}>
                 <Image src={bizImage} width={100} height={100} objectFit="contain"/>
                 <div className='flex flex-col pl-4 pt-3'>
                     <p className='font-bold'>{biz?.name}</p>
@@ -54,7 +63,8 @@ export default function CardBusiness(props) {
                 <svg className="w-6 h-6 self-end ml-20 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </div>
                 <div>
-                    {bizInfo}
+                    <p>{bizInfo.name}</p>
+                    <p>{bizInfo.information}</p>
                 </div>
             </div>
     );
