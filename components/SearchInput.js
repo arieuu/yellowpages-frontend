@@ -11,9 +11,10 @@ let inputValueGlobal;
 const getServices = async (str) => {
     try {
         let searchableCountry = str.replace(/,/g,"");
-        const url = "https://ef5f-197-255-136-79.eu.ngrok.io/api/v1/suggest?query=" + searchableCountry;
+        const url = "http://159.89.14.20:3000/api/v1/suggest?query=" + searchableCountry;
 
         const { data } = await axios.get(url);
+        //console.log(data);
         return data;
     } catch (e) {
         console.error(e);
@@ -52,6 +53,7 @@ export default function SearchInput() {
     
        let data = await getServices(e.target.search.value);
        setOptions(data);
+       //console.log('term: ' + data);
 
        router.push("search/" + e.target.search.value);
     };
@@ -103,7 +105,7 @@ export default function SearchInput() {
                         {
                             options.map((item, index) => (
                                 <li key={index} 
-                                    className="min-h-10 w-[350px] border-b-[1px] border-solid border-l-gray-300 py-2">
+                                    className="min-h-10 w-[448px] border-b-[1px] border-solid border-l-gray-300 py-2">
                                     <Link href={`search/${encodeURIComponent(item)}`}><a>
                                     {item}</a></Link>
                                 </li>

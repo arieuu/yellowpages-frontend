@@ -12,10 +12,11 @@ import Drawer from "../../components/Drawer";
 
 
 const getBuziness = async (str) => {
-    const url = "https://ef5f-197-255-136-79.eu.ngrok.io/api/v1/search?query=" + str;
+    const url = "http://159.89.14.20:3000/api/v1/search?query=" + str;
 
     let { data } = await axios.get(url);
     //console.log(data);
+    console.log(data);
     return data;
 }
 
