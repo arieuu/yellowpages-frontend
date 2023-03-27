@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const getBuziness = async (id) => {
-    const url = "http://159.89.14.20:3000/api/v1/business/" + id
+    const url = "http://api.arielcarvalho.io:3000/api/v1/business/" + id
 
     let { data } = await axios.get(url);
     //console.log(data);

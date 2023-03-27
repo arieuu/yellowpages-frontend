@@ -11,7 +11,7 @@ let inputValueGlobal;
 const getServices = async (str) => {
     try {
         let searchableCountry = str.replace(/,/g,"");
-        const url = "http://159.89.14.20:3000/api/v1/suggest?query=" + searchableCountry;
+        const url = "http://api.arielcarvalho.io:3000/api/v1/suggest?query=" + searchableCountry;
 
         const { data } = await axios.get(url);
         //console.log(data);
