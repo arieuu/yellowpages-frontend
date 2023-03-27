@@ -3,7 +3,6 @@ import Drawer from '../components/Drawer'
 import { useState } from 'react'
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
-import BizDetails from './BizDetails';
 import GrowWithUs from '../components/GrowWithUs';
 import YpMedia from '../components/YpMedia';
 import PopularService from '../components/PopularService';

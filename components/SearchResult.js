@@ -21,7 +21,7 @@ const getServices = async (str) => {
     }
 };
 
-export default function SearchInput() {
+export default function SearchResult() {
 
     const router = useRouter()
 
@@ -57,7 +57,6 @@ export default function SearchInput() {
 
        //if (router.pathname.search('search') == -1) 
         //router.push("search/" + e.target.search.value);
-
        
     };
 
@@ -107,12 +106,15 @@ export default function SearchInput() {
                         className="bg-white border-[1px] rounded-b-md shadow-lg p-4 absolute max-h-[200px] overflow-y-auto">
                         {
                             options.map((item, index) => (
-                                <li key={index} 
-                                    className="min-h-10 w-[448px] border-b-[1px] border-solid border-l-gray-300 py-2">
-                                    <Link href={`search/${encodeURIComponent(item)}`}><a>
-                                    {item}</a></Link>
-                                    
-                                </li>
+                                <button key={index} 
+                                    className="min-h-10 w-[448px] border-b-[1px] border-solid border-l-gray-300 py-2"
+                                    onClick={() => router.push('/')}>
+                                    {/*<Link href={`search/${encodeURIComponent(item)}`}>  
+                                        
+                                        {item}
+
+                            </Link>*/}
+                                </button>
                             ))
                         }
                     </ul>

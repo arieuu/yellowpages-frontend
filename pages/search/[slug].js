@@ -8,6 +8,7 @@ import { GetServerSideProps } from "next";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/Navbar";
 import Drawer from "../../components/Drawer";
+import SearchResult from "../../components/SearchResult";
 
 
 
@@ -44,8 +45,8 @@ export default function Seacrh({data}) {
             <NavBar toggle={toggle}/>
             <Drawer isOpen={isOpen} toggle={toggle}/>
             <div className="flex flex-col min-h-screen items-center mt-28">
-                <SearchInput></SearchInput>
-                <CardList business={biz}/>
+                <SearchInput />
+                {biz.length > 0 ? <CardList business={biz} length={biz.length}/> : <p>No result found!</p>}
             </div>
             <Footer />
         </div>

@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from "swiper/react";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -7,7 +9,25 @@ import 'swiper/css/pagination';
 
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-export default function Details() {
+export default function Details({ id }) {
+
+    const [businessDetails, setBusinessDetails] = useState([]);
+
+    const getBuzinessDetails = async () => {
+    const url = "http://api.arielcarvalho.io:3000/api/v1/business/" + id;
+
+    let { data } = await axios.get(url);
+        return data;
+    }
+
+    useEffect(() => {
+        async function fetchData() {
+            let data = await getBuzinessDetails();
+            console.log("business-details: ", data);
+            setBusinessDetails(data);
+        }
+        fetchData();
+    }, []);
 
     const bizImage = '/logo-pa.png';
 
@@ -16,15 +36,15 @@ export default function Details() {
             <div className='flex flex-row'>
                 <Image src={bizImage} width={80} height={80} objectFit="contain"/>
                 <div className='pl-10'>
-                    <strong className='text-xl'>Caixa Económica de Cabo Verde</strong>
-                    <p className='text-sm'>Banco / Financeiro</p>
+                    <strong className='text-xl'>{businessDetails.name}</strong>
+                    <p className='text-sm'>{businessDetails.category}</p>
                 </div>
             </div>
 
             <div className='border p-4 mt-8'>
                 <strong>Sobre</strong>
-                <p className=''>Caixa Económica Federal, also referred to as Caixa, is a state-owned Brasilian financial services company headquartered in Brasilia, Brazil. 
-                    It is the fourth largest banking institution in Brazil, as well as the fourth largest in Latin America, and the eighty-third largest bank in the world.
+                <p className=''>
+                    {businessDetails.information}
                 </p>
                 <div className='flex flex-row justify-end'>
                     <button className='bg-[#FBED04] py-0.5 px-2 rounded text-sm mr-3'>Chamar</button>
@@ -38,9 +58,8 @@ export default function Details() {
                         <strong>Endereço</strong>
                         <Image src={'/enderesso.png'} width={16} height={16}/>
                     </div>
-                    <p className='block text-sm'>Sanlam Tower, 18th Foor, Waiyaki Way,
-                        Westlands, Nairobi P.O.Box: 14531 - 00800
-                        Nairobi.
+                    <p className='block text-sm'>
+                        {businessDetails.address}
                     </p>
                 </div>
                 <div>
@@ -48,30 +67,40 @@ export default function Details() {
                         <strong>Serviços</strong>
                         <Image src={'/servico-reparacao.png'} width={17} height={17}/>
                     </div>
-                    <p className='text-sm'>Banking</p>
+                    {
+                        businessDetails?.service?.map(service => {
+                            return (
+                                <span>{service.service}, </span>
+                            )
+                        })
+                    }
                 </div>
                 <div>
                     <div className='flex items-center gap-x-3'>
                         <strong>Info</strong>
                         <Image src={'/info.png'} width={16} height={16}/>
                     </div>
-                    <p className='block text-sm'>Caixa Econômica Federal, also referred to as Caixa, 
-                        is a state-owned Brazilian financial services company 
-                        headquartered in Brasília, Brazil. It is the fourth largest.</p>
+                    <p className='block text-sm'>{businessDetails?.information}</p>
                 </div>
                 <div> 
                     <div className='flex items-center gap-3'>
                         <strong>Atividade</strong>
                         <Image src={'/bold-activity.png'} width={16} height={16}/>
                     </div>
-                    <p className='text-sm'>Banking</p>
+                    <p className='text-sm'>{businessDetails.category}</p>
                 </div>
                 <div>
                     <div className='flex items-center gap-3'>
                         <strong>Métodos de pagamento</strong>
                         <Image src={'/cartao.png'} width={16} height={16}/>
                     </div>
-                    <p className='text-sm'>Vint4, Visa, Mastercard</p>
+                     {
+                        businessDetails?.paymethod?.map(paymethod => {
+                            return (
+                                <span>{paymethod.paymethod}, </span>
+                            )
+                        })
+                    }
                 </div>
                 
             </div>
