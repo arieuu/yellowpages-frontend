@@ -28,6 +28,7 @@ export default function SearchInput() {
     const router = useRouter()
 
     const [options, setOptions] = useState([]);
+    const [inputText, setInputText] = useState('');
 
     const onChangeData = async (e) => {
         e.preventDefault();
@@ -41,8 +42,14 @@ export default function SearchInput() {
 
         let data = await getServices(newValue);
         setOptions(data);
+
+    
         
     };
+
+        useEffect(() => {
+             setInputText(inputText);
+        }, [inputText]);
 
     const handleSubmit = async (e) => {
        e.preventDefault();
@@ -73,6 +80,7 @@ export default function SearchInput() {
                     <input type="text" 
                         name="search"
                         id="name"
+                        value={inputText}
                         className="border border-gray-800 placeholder-gray-500 text-center focus:outline-none rounded-[0.5rem] shadow-sr w-[30rem] pr-16 pl-4 h-12"
                         placeholder="Pesquise por milhões de empresas"
                         aria-label="search"
@@ -116,12 +124,14 @@ export default function SearchInput() {
                                     
                                     {item}
                                     
-                                    
+                                   
                                     
                                 </li>
                                 
                                 </Link>
+                                
                             ))
+                            
                         }
                     </ul>
                 )

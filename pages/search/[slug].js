@@ -45,7 +45,7 @@ export default function Seacrh({data}) {
             <NavBar toggle={toggle}/>
             <Drawer isOpen={isOpen} toggle={toggle}/>
             <div className="flex flex-col min-h-screen items-center mt-28">
-                <SearchInput />
+                <SearchResult />
                 {biz.length > 0 ? <CardList business={biz} length={biz.length}/> : <p className="mt-20">No result found :(</p>}
             </div>
             <Footer />

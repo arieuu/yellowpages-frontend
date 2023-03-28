@@ -21,11 +21,14 @@ const getServices = async (str) => {
     }
 };
 
-export default function SearchResult() {
+
+
+export default function SearchInput() {
 
     const router = useRouter()
 
     const [options, setOptions] = useState([]);
+    const [inputText, setInputText] = useState('');
 
     const onChangeData = async (e) => {
         e.preventDefault();
@@ -39,8 +42,14 @@ export default function SearchResult() {
 
         let data = await getServices(newValue);
         setOptions(data);
+
+    
         
     };
+
+        useEffect(() => {
+             setInputText(inputText);
+        }, [inputText]);
 
     const handleSubmit = async (e) => {
        e.preventDefault();
@@ -57,6 +66,7 @@ export default function SearchResult() {
 
        //if (router.pathname.search('search') == -1) 
         //router.push("search/" + e.target.search.value);
+
        
     };
 
@@ -70,10 +80,11 @@ export default function SearchResult() {
                     <input type="text" 
                         name="search"
                         id="name"
+                        value={inputText}
                         className="border border-gray-800 placeholder-gray-500 text-center focus:outline-none rounded-[0.5rem] shadow-sr w-[30rem] pr-16 pl-4 h-12"
                         placeholder="Pesquise por milhões de empresas"
                         aria-label="search"
-                        autoComplete="on"
+                        autoComplete="off"
                         onChange={(e) => onChangeData(e)}/>
                     {/*<button type="submit" className="px-6 py-3 bg-slate-900 text-white rounded-sm">SEARCH</button>*/}
                 </div>
@@ -103,19 +114,24 @@ export default function SearchResult() {
                 options?.length > 0 && (
                     <ul 
                         id="options_list"
-                        className="bg-white border-[1px] rounded-b-md shadow-lg p-4 absolute max-h-[200px] overflow-y-auto">
+                        className="bg-white border-[1px] rounded-b-md shadow-lg   absolute max-h-[200px] overflow-y-auto">
                         {
                             options.map((item, index) => (
-                                <button key={index} 
-                                    className="min-h-10 w-[448px] border-b-[1px] border-solid border-l-gray-300 py-2"
-                                    onClick={() => router.push('/')}>
-                                    {/*<Link href={`search/${encodeURIComponent(item)}`}>  
-                                        
-                                        {item}
-
-                            </Link>*/}
-                                </button>
+                                <Link key={index} href={`${encodeURIComponent(item)}`}>
+                                
+                                <li  className="min-h-10 w-[448px] border-b-[1px] border-solid border-l-gray-300 py-2 p-10 cursor-pointer">
+                                    
+                                    
+                                    {item}
+                                    
+                                   
+                                    
+                                </li>
+                                
+                                </Link>
+                                
                             ))
+                            
                         }
                     </ul>
                 )
