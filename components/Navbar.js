@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NavBar({ toggle }){
 
@@ -6,11 +7,14 @@ export default function NavBar({ toggle }){
 
     return (
         <nav className="flex justify-between items-center h-16 bg-[#FBED04] text-gray-800 relative shadow-sm font-sans">
-            <div className="pl-16">
+            
+            <Link href="/">
+            <div className="pl-16 cursor-pointer">
                 {/*<strong className="pr-4 border-r-2 border-black">Yellow Pages</strong>
                 <a href="#" className="pl-4"><span>Categorias</span></a>*/}
                 <Image src={logo} width={40} height={40} className="pl-4"/>
             </div>
+            </Link>
             <div className="px-4 visible cursor-pointer md:hidden" onClick={toggle}>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" 
                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
