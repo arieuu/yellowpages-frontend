@@ -17,7 +17,7 @@ export default function MobileApp() {
                 <div className="">
                   <h4 className="font-bold text-3xl mb-4 font-mulish">Nunca foi tão fácil usar nossos serviços</h4>
                   <p className="leading-relaxed mb-8 pr-6 max-w-md">With the YP app, you can find millions of local businesses on the
-                  go and quickly connect with them from anywhere. It's free!</p>
+                  go and quickly connect with them from anywhere. It&rsquo;s free!</p>
                 </div>
               </div>
 
