@@ -27,14 +27,14 @@ export default function Details({ id }) {
             setBusinessDetails(data);
         }
         fetchData();
-    }, []);
+    }, );
 
     const bizImage = '/logo-pa.png';
 
     return (
         <div className='flex flex-col mt-16 w-[60rem]'>
             <div className='flex flex-row'>
-                <Image src={bizImage} width={80} height={80} objectFit="contain"/>
+                <Image src={bizImage} alt="" width={80} height={80} objectFit="contain"/>
                 <div className='pl-10'>
                     <strong className='text-xl'>{businessDetails.name}</strong>
                     <p className='text-sm'>{businessDetails.category}</p>
@@ -56,7 +56,7 @@ export default function Details({ id }) {
                 <div>
                     <div className='flex items-center gap-3'>
                         <strong>Endereço</strong>
-                        <Image src={'/enderesso.png'} width={16} height={16}/>
+                        <Image src={'/enderesso.png'} alt="" width={16} height={16}/>
                     </div>
                     <p className='block text-sm'>
                         {businessDetails.address}
@@ -65,7 +65,7 @@ export default function Details({ id }) {
                 <div>
                     <div className='flex items-center gap-3'>
                         <strong>Serviços</strong>
-                        <Image src={'/servico-reparacao.png'} width={17} height={17}/>
+                        <Image src={'/servico-reparacao.png'} alt="" width={17} height={17}/>
                     </div>
                     {
                         businessDetails?.service?.map(service => {
@@ -79,21 +79,21 @@ export default function Details({ id }) {
                 <div>
                     <div className='flex items-center gap-x-3'>
                         <strong>Info</strong>
-                        <Image src={'/info.png'} width={16} height={16}/>
+                        <Image src={'/info.png'} alt="" width={16} height={16}/>
                     </div>
                     <p className='block text-sm'>{businessDetails?.information}</p>
                 </div>
                 <div> 
                     <div className='flex items-center gap-3'>
                         <strong>Atividade</strong>
-                        <Image src={'/bold-activity.png'} width={16} height={16}/>
+                        <Image src={'/bold-activity.png'} alt="" width={16} height={16}/>
                     </div>
                     <p className='text-sm'>{businessDetails.category}</p>
                 </div>
                 <div>
                     <div className='flex items-center gap-3'>
                         <strong>Métodos de pagamento</strong>
-                        <Image src={'/cartao.png'} width={16} height={16}/>
+                        <Image src={'/cartao.png'} width={16} alt="" height={16}/>
                     </div>
                      {
                         businessDetails?.paymethod?.map(paymethod => {
@@ -125,19 +125,19 @@ export default function Details({ id }) {
                     className="swiper"
                 >
                     <SwiperSlide>
-                        <Image src={'/slide1.png'} width={320} height={187}/>
+                        <Image src={'/slide1.png'} width={320} alt="" height={187}/>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src={'/slide2.png'} width={320} height={187}/>
+                        <Image src={'/slide2.png'} width={320} alt="" height={187}/>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src={'/slide3.png'} width={320} height={187}/>
+                        <Image src={'/slide3.png'} width={320} alt="" height={187}/>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src={'/slide1.png'} width={320} height={187}/>
+                        <Image src={'/slide1.png'} width={320} alt="" height={187}/>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src={'/slide2.png'} width={320} height={187}/>
+                        <Image src={'/slide2.png'} width={320} alt="" height={187}/>
                     </SwiperSlide>
                 </Swiper>
             </div>

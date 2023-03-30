@@ -11,7 +11,7 @@ export default function GrowWithUs() {
             <div className="pt-8">
               <div className="flex gap-3 items-center pb-3">
                 <h3 className="font-bold text-center text-2xl font-mulish">Get noticed</h3>
-                <Image src={'/megaphone.svg'} width={24} height={24}/>
+                <Image src={'/megaphone.svg'} alt="" width={24} height={24}/>
               </div>
               <p className="leading-relaxed">Improve your company&rsquo;s visibility, 
                 get your products purchased and grow! 
@@ -20,7 +20,7 @@ export default function GrowWithUs() {
             <div className="pt-4">
               <div className="flex gap-3 items-center pb-3">
                 <h3 className="font-bold text-2xl font-mulish">Get customers</h3>
-                <Image src={'/more-people.svg'} width={24} height={24} />
+                <Image src={'/more-people.svg'}alt=""  width={24} height={24} />
               </div>
               <p className="leading-relaxed">Clients trust those who have been trusted by others. 
                 How does an SME get the clout to form those oh so rewarding connections? 
@@ -29,14 +29,14 @@ export default function GrowWithUs() {
             <div className="pt-4">
               <div className="flex gap-3 items-center pb-3">
                 <h3 className="font-bold text-2xl font-mulish">Get results</h3>
-                <Image src={'/check.svg'} width={20} height={20} />
+                <Image src={'/check.svg'}alt="" width={20} height={20} />
               </div>
               <p className="leading-relaxed">We deliver tangible, measurable results that guide your growth path.</p>
             </div>
             <button className="px-9 py-3 bg-[#FBED04] max-w-fit rounded-md mt-8 hover:bg-[#1d1d1a] hover:text-white hover:shadow-lg transition duration-300 ease-in-out">Learn how</button>
           </div>
   
-          <Image src={'/grow.png'} width={768} height={786} className="abosulte mr-16 object-contain top-0 right-0"/>
+          <Image src={'/grow.png'} width={768} height={786}alt="" className="abosulte mr-16 object-contain top-0 right-0"/>
       </div>
      
      
