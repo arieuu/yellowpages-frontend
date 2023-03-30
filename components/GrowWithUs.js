@@ -13,7 +13,7 @@ export default function GrowWithUs() {
                 <h3 className="font-bold text-center text-2xl font-mulish">Get noticed</h3>
                 <Image src={'/megaphone.svg'} width={24} height={24}/>
               </div>
-              <p className="leading-relaxed">Improve your company's visibility, 
+              <p className="leading-relaxed">Improve your company&rsquo;s visibility, 
                 get your products purchased and grow! 
                 See how we can get more eyes on you here.</p>
             </div>
