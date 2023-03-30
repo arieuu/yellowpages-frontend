@@ -47,9 +47,20 @@ export default function SearchInput() {
         
     };
 
+
+
+    const [route, setRoute] = useState()
+    const handleEnter = (e) => {
+        e.preventDefault()
+        router.push("/search/" + route)
+    }
+
         useEffect(() => {
              setInputText(inputText);
         }, [inputText]);
+
+
+
 
     const handleSubmit = async (e) => {
        e.preventDefault();
@@ -72,7 +83,7 @@ export default function SearchInput() {
 
     return (
         <div className="max-w-md">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleEnter}>
                 <div className="flex items-center text-gray-400 focus-within:text-gray-600">
                     <svg className="w-6 h-6 absolute ml-[25rem] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -80,12 +91,12 @@ export default function SearchInput() {
                     <input type="text" 
                         name="search"
                         id="name"
-                        value={inputText}
                         className="border border-gray-800 placeholder-gray-500 text-center focus:outline-none rounded-[0.5rem] shadow-sr w-[30rem] pr-16 pl-4 h-12"
                         placeholder="Pesquise por milhões de empresas"
                         aria-label="search"
                         autoComplete="off"
-                        onChange={(e) => onChangeData(e)}/>
+                        onChange={(e)=>{setRoute(e.target.value)
+                        onChangeData(e)}}/>
                     {/*<button type="submit" className="px-6 py-3 bg-slate-900 text-white rounded-sm">SEARCH</button>*/}
                 </div>
             </form>
