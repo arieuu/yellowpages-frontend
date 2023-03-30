@@ -70,7 +70,8 @@ export default function Details({ id }) {
                     {
                         businessDetails?.service?.map(service => {
                             return (
-                                <span>{service.service}, </span>
+                                <span key={service}>{service.service}, </span>
+
                             )
                         })
                     }
@@ -97,7 +98,7 @@ export default function Details({ id }) {
                      {
                         businessDetails?.paymethod?.map(paymethod => {
                             return (
-                                <span>{paymethod.paymethod}, </span>
+                                <span key={paymethod}>{paymethod.paymethod}, </span>
                             )
                         })
                     }
